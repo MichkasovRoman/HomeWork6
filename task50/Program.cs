@@ -72,10 +72,10 @@ int lower = int.Parse(Console.ReadLine()!);
 Console.Write("Введите верхнюю границу диапазона элементов массива: ");
 int upper = int.Parse(Console.ReadLine()!);
 
-Console.WriteLine(" ");
+Console.WriteLine(String.Empty);
 
 int[,] workingArray = GetArray(m, n, lower, upper);
 PrintArray(workingArray);
-Console.WriteLine(" ");
+Console.WriteLine(String.Empty);
 SearchForElement(workingArray);
 
