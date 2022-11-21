@@ -17,6 +17,7 @@ double[,] GetArray(int row, int column, double minValue, double maxValue)
 void PrintArray(double[,] array)
 {
     Console.WriteLine("Двумерный массив: ");
+    Console.WriteLine(String.Empty);
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
@@ -37,6 +38,8 @@ Console.Write("Введите нижнюю границу диапазона э�
 double lower = double.Parse(Console.ReadLine()!);
 Console.Write("Введите верхнюю границу диапазона элементов массива: ");
 double upper = double.Parse(Console.ReadLine()!);
+
+Console.WriteLine(String.Empty);
 
 double[,] workingArray = GetArray(m, n, lower, upper);
 PrintArray(workingArray);
