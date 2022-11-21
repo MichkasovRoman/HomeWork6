@@ -77,5 +77,7 @@ Console.WriteLine(String.Empty);
 int[,] workingArray = GetArray(m, n, lower, upper);
 PrintArray(workingArray);
 Console.WriteLine(String.Empty);
+int[] massive = OneSize(workingArray);
+Console.WriteLine(String.Join(", ", massive));
 SearchForElement(workingArray);
 
