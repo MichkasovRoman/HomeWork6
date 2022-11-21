@@ -17,6 +17,7 @@ int[,] GetArray(int row, int column, int minValue, int maxValue)
 void PrintArray(int[,] array)
 {
     Console.WriteLine("Двумерный массив: ");
+    Console.WriteLine(String.Empty);
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
@@ -27,23 +28,19 @@ void PrintArray(int[,] array)
     }
 }
 
-double[] ArithmeticalMeanOfColumn(int[,] array)
+void ArithmeticalMeanOfColumn(int[,] array)
 {
-    double[] newArray = new double[array.GetLength(1)];
-    for (int k = 0; k < newArray.Length; k++)
-    {
-        
-    }
     for (int j = 0; j < array.GetLength(1); j++)
     {
-
+        int sum = 0;
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            sum = sum + array[i, j];
+        }
+    var average = Math.Round((double) sum/array.GetLength(0), 3); 
+    Console.WriteLine(String.Empty);
+    Console.Write($"Среднее арифметическое элементов {j}-го столбца: {average}");
     }
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        sum = sum + array[i, 0];
-    }
-    double average = sum/array.GetLength(0);
-    
 }
 
 Console.Clear();
@@ -57,5 +54,9 @@ int lower = int.Parse(Console.ReadLine()!);
 Console.Write("Введите верхнюю границу диапазона элементов массива: ");
 int upper = int.Parse(Console.ReadLine()!);
 
+Console.WriteLine(String.Empty);
+
 int[,] workingArray = GetArray(m, n, lower, upper);
 PrintArray(workingArray);
+
+ArithmeticalMeanOfColumn(workingArray);
